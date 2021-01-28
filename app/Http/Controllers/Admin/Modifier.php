@@ -19,18 +19,15 @@ class Modifier extends Controller
     }
 
 
-    public function modifierProduit(Request $request){
+    public function modifierUser(Request $request){
 
-        /*$produit = */Produit::all()->where('id',$request->id)->first()->update([ // error update ??? or just Produit::update(....)
+        /*$user = */User::all()->where('id',$request->id)->first()->update([ // error update ??? or just Produit::update(....)
             'name' => $request->name,
-            'price' => $request->price,
-            'avis' => $request->avis,
-            'description' => $request->description,
-            'image' => $request ->image,
+            'email' => $request->email,
         ]);
-        //event(new Registered($produit));
+        //event(new Registered($user));
 
-        return redirect(RouteServiceProvider::AdminModifier);
+        return redirect(RouteServiceProvider::AdminUser);
 
     }
 }
