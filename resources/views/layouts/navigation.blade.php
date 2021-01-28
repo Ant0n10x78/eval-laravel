@@ -8,7 +8,7 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-    <h1 align="center">You're logged in!</h1>
+    <h1 align="center">You're logged in !</h1>
     <div class="ml-3">
                     <div class="font-medium text-base text-gray-800">Nom: {{ Auth::user()->name }} {{ Auth::user()->afterName}}</div>
                     <div class="font-medium text-sm text-gray-500">Date de naissance: {{ Auth::user()->birthDate}}</div>
