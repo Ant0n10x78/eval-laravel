@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//use Controller
+use App\Http\Controllers\Admin\admin;
+use App\Http\Controllers\Admin\Modifier;
+use App\Http\Controllers\Admin\Supprimer;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +25,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+//Route Admin
+Route::get('/admin',[admin::class,'authorized']);
+
+Route::get('/admin/user/modifier',[Modifier::class,'authorizedUser']);
+Route::post('/admin/user/modifier',[Modifier::class,'modifierUser']);
+
+Route::get('/admin/user/supprimer',[Supprimer::class,'authorizedUser']);
+Route::post('/admin/user/supprimer',[Supprimer::class,'supprimerProduit']);
